@@ -1,4 +1,8 @@
 
+
+
+
+
     # coding: utf-8
 def scrape():
 
@@ -23,7 +27,7 @@ def scrape():
     soup = BeautifulSoup(html,"html.parser")
 
     news_title =soup.find('div',class_="content_title").get_text()
-    new_p=soup.find('div',class_="article_teaser_body").get_text()
+    news_p=soup.find('div',class_="article_teaser_body").get_text()
 
 
     # In[3]:
@@ -100,28 +104,28 @@ def scrape():
 
 
     df=pd.read_html("http://space-facts.com/mars/")[0]
-    df
+    
 
 
     # In[11]:
 
 
     df.columns=["Description","Facts"]
-    df
+    
 
 
     # In[12]:
 
 
     df.set_index('Description',inplace=True)
-    df
+    
 
 
     # In[13]:
 
 
     table=df.to_html()
-    table
+    
 
 
     # In[14]:
